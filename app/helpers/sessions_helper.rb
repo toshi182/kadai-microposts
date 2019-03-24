@@ -4,6 +4,7 @@ module SessionsHelper
   end
 
   def logged_in?
+    # ログインしているときには、trueを返し、していないときにはfalseを返す
     !!current_user
   end
 end
