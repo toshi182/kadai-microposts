@@ -39,8 +39,13 @@ class UsersController < ApplicationController
     counts(@user)
   end
   
+  def likes
+    # 下記で対象のユーザーがいいねしたマイクロソフト一覧を取得している
+    @user = User.find(params[:id])
+    @microposts = @user.liked_microposts.page(params[:page])
+  end
+  
   private
-
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
