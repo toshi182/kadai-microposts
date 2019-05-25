@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   get 'signup', to: 'users#new'
+  # resources :usersと書くだけで、index, show, new, create, edit, update, destroy
   resources :users, only: [:index, :show, :new, :create] do
     # index, show, new, create, edit, update, destroy以外のルーティングを追加する
     member do

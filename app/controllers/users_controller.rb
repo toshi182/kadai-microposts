@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def likes
     # 下記で対象のユーザーがいいねしたマイクロソフト一覧を取得している
     @user = User.find(params[:id])
-    @microposts = @user.liked_microposts.page(params[:page])
+    @liked_microposts = @user.liked_microposts.page(params[:page])
   end
   
   private
